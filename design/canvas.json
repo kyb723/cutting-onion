@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    { "file": "System.dc.html",   "title": "Brand kit",      "x": -1240, "y": 0,     "w": 1080, "h": 1560 },
+    { "file": "Motion.dc.html",   "title": "How it moves",   "x": -1240, "y": 1680,  "w": 1080, "h": 1620 },
+    { "file": "HeroDark.dc.html", "title": "Hero · play me", "x": 0,     "y": -1000, "w": 1440, "h": 860 },
+    { "file": "Main.dc.html",     "title": "Desktop · 中文", "x": 0,     "y": 0,     "w": 1440, "h": 7600 },
+    { "file": "Mobile.dc.html",   "title": "Mobile · 中文",  "x": 1560,  "y": 0,     "w": 390,  "h": 5200 }
+  ],
+  "annotations": [
+    { "id": "hero-note", "x": -700, "y": -1000, "w": 620,
+      "text": "THE HERO — drag across it\nBlack, settled. The field is now built from the sunglasses onion off her glassware: round, no legs, no lettering. Big ones carry the knife; small ones are just the shades.\n\nCentre is the IG icon on its own, larger. Cut fourteen onions and the prompt turns into 而家好啲未？\n\nThe same hero runs at the top of the desktop board below." },
+    { "id": "start-here", "x": 1560, "y": -1000, "w": 560,
+      "text": "THE REST\nDesktop page is 中文-first — the EN toggle in the nav still works. Phone board to the right. Brand kit and motion spec to the left.\n\nAnything in [square brackets] is a fact I don't have yet: address, hours, phone, IG handle, her name, opening year." }
+  ],
+  "launch": { "view": "focused", "file": "HeroDark.dc.html" }
+}

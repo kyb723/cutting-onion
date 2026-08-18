@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CUTTING ONIONS — 唔好喊 · Please don’t cry</title>
+<meta name="description" content="切洋蔥係廚房裡面唯一可以喊得理直氣壯嘅理由。CUTTING ONIONS 用成間鋪頭，日日去證明佢錯。香港 [地區] 手打漢堡、包、意粉同曳野。">
+<meta name="theme-color" content="#0E0B09">
+<link rel="canonical" href="https://[YOUR-DOMAIN]/">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="CUTTING ONIONS — 唔好喊">
+<meta property="og:description" content="A Hong Kong kitchen named after the one thing that makes everybody cry. We spend every service proving it wrong.">
+<meta property="og:image" content="https://[YOUR-DOMAIN]/assets/img/og-card.jpg">
+<meta property="og:url" content="https://[YOUR-DOMAIN]/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/img/icon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+HK:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Cutting Onions",
+  "image": "https://[YOUR-DOMAIN]/assets/img/og-card.jpg",
+  "url": "https://[YOUR-DOMAIN]/",
+  "telephone": "[+852 0000 0000]",
+  "priceRange": "$$",
+  "servesCuisine": ["Burgers", "Hong Kong", "Western"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Shop / Street]",
+    "addressLocality": "[District]",
+    "addressRegion": "Hong Kong",
+    "addressCountry": "HK"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "12:00",
+    "closes": "23:00"
+  }],
+  "sameAs": ["https://instagram.com/[HANDLE]"]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#story" data-l="zh">跳去內容</a>
+<a class="skip" href="#story" data-l="en">Skip to content</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="Cutting Onions">
+      <span class="brand__disc"><img src="assets/img/logo-face.png" alt="" width="48" height="48"></span>
+      <span class="brand__name">Cutting<br>Onions</span>
+    </a>
+
+    <nav class="nav__links" id="navlinks" aria-label="Main">
+      <a href="#story"><span data-l="zh">故事</span><span data-l="en">Story</span></a>
+      <a href="#signatures"><span data-l="zh">招牌</span><span data-l="en">Signatures</span></a>
+      <a href="#menu"><span data-l="zh">餐牌</span><span data-l="en">Menu</span></a>
+      <a href="#gallery"><span data-l="zh">相片</span><span data-l="en">Gallery</span></a>
+      <a href="#visit"><span data-l="zh">到訪</span><span data-l="en">Visit</span></a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="langsw" role="group" aria-label="Language / 語言">
+        <button type="button" data-setlang="zh" aria-pressed="true">中文</button>
+        <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--sm" href="#visit"><span data-l="zh">訂枱</span><span data-l="en">Book</span></a>
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" aria-label="Cutting Onions">
+  <div class="hero__centre">
+    <span class="ig"><img src="assets/img/logo-face.png" alt="The Cutting Onions crying face" width="400" height="400"></span>
+  </div>
+
+  <canvas id="onionfield" aria-hidden="true"></canvas>
+
+  <div class="hero__ui">
+    <div class="hero__copy">
+      <p class="kicker"><i aria-hidden="true"></i><span data-l="zh">香港 · [地區] · [年份] 開業</span><span data-l="en">Hong Kong · [District] · since [Year]</span></p>
+      <h1 class="hero__h1">
+        <span data-l="zh">唔好喊</span>
+        <span data-l="en">Please<br>don’t cry</span>
+      </h1>
+      <p class="hero__alt display"><span data-l="zh">Please don’t cry</span><span data-l="en">唔好喊</span></p>
+      <p class="hero__sub">
+        <span data-l="zh">切洋蔥係廚房裡面唯一可以喊得理直氣壯嘅理由。我哋就用成間鋪頭，日日去證明佢錯。</span>
+        <span data-l="en">Cutting onions is the only socially acceptable reason to cry in a kitchen. We spend every service proving it wrong.</span>
+      </p>
+      <p class="hero__cta">
+        <a class="btn" href="#menu"><span data-l="zh">睇餐牌</span><span data-l="en">See the menu</span></a>
+        <a class="btn btn--ghost" href="#visit"><span data-l="zh">訂枱</span><span data-l="en">Book a table</span></a>
+      </p>
+    </div>
+
+    <div class="hero__hint" id="hint">
+      <p class="hero__hintrow">
+        <b>
+          <span class="hint-before"><span data-l="zh">拖曳，切啲洋蔥</span><span data-l="en">Drag to cut the onions</span></span>
+          <span class="hint-after"><span data-l="zh">而家好啲未？</span><span data-l="en">Feeling better?</span></span>
+        </b>
+        <svg class="hint-before" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4v13l4-4 3 6 3-1.4-3-6h6L3 4Z" fill="currentColor"/></svg>
+      </p>
+      <p class="hero__hintsub display">
+        <span class="hint-before"><span data-l="zh">Drag to cut</span><span data-l="en">拖曳，切啲洋蔥</span></span>
+        <span class="hint-after"><span data-l="zh">Feeling better?</span><span data-l="en">而家好啲未？</span></span>
+      </p>
+      <p class="hero__count display" id="cutcount">Cut 0</p>
+    </div>
+
+    <p class="hero__scroll">
+      <span data-l="zh">向下捲</span><span data-l="en">Scroll</span>
+      <svg width="14" height="18" viewBox="0 0 14 18" fill="none" aria-hidden="true"><path d="M7 1v15M2 11l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </p>
+  </div>
+</section>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="tickertrack"></div>
+</div>
+
+<!-- ================= STORY ================= -->
+<section class="sec sec--story reveal" id="story">
+  <div class="wrap">
+    <header class="sechead">
+      <div>
+        <p class="lbl"><span data-l="zh">點解叫呢個名</span><span data-l="en">Why the name</span></p>
+        <h2><span data-l="zh">一樣流眼淚<br>完全唔同原因</span><span data-l="en">Same tears,<br>better reason</span></h2>
+        <p class="sechead__alt"><span data-l="zh">Same tears, better reason</span><span data-l="en">一樣流眼淚，完全唔同原因</span></p>
+      </div>
+      <p class="sechead__note">
+        <span data-l="zh">切洋蔥係廚房裡面唯一可以喊得理直氣壯嘅理由。本來只係一個笑話，後來變咗成間鋪嘅計劃。</span>
+        <span data-l="en">Cutting onions is the only socially acceptable reason to cry in a kitchen. That was the joke. Then it became the whole plan.</span>
+      </p>
+    </header>
+
+    <div class="story">
+      <figure class="story__marks">
+        <span class="story__cell story__cell--a"><img src="assets/img/logo-face.png" alt="The crying face" width="190" height="190" loading="lazy"></span>
+        <svg width="46" height="26" viewBox="0 0 46 26" fill="none" aria-hidden="true"><path d="M2 13h39M31 3l10 10-10 10" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="story__cell story__cell--b"><img src="assets/img/mark-onion.png" alt="The onion in sunglasses" width="128" height="134" loading="lazy"></span>
+        <figcaption><span data-l="zh">成個品牌，一個箭嘴講晒</span><span data-l="en">The whole brand, in one arrow</span></figcaption>
+      </figure>
+
+      <div class="story__text">
+        <div data-l="zh">
+          <p>老闆娘想要一個冇人會唔記得嘅名，所以揀咗全世界都有反應嗰樣嘢。之後就日日開鋪去證明佢錯。</p>
+          <p>曳晒嘅炸物、要兩隻手先揸得住嘅包、加咗鯷魚蛋黃醬嘅漢堡，同埋隻杯上面寫住 PLEASE DON’T CRY 嘅青青飲品 —— 費事你唔記得自己嚟做乜。</p>
+        </div>
+        <div data-l="en">
+          <p>[Her name] wanted a name nobody could forget, so she picked the one thing that gets a reaction out of everybody. Then she spent every service proving it wrong.</p>
+          <p>Deep fried everythong. Bao you need two hands for. A burger with anchovy mayo in it. A green drink with PLEASE DON’T CRY printed on the glass, in case you forget why you came.</p>
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="quote">
+      <p class="quote__zh">你快樂所以我快樂 :)</p>
+      <cite class="display"><span data-l="zh">印喺每一張餐牌上面</span><span data-l="en">Printed on every menu</span></cite>
+    </blockquote>
+
+    <ul class="facts">
+      <li><b class="display">No service charge, tips welcomed</b><span>免收加一 歡迎打賞</span></li>
+      <li><b class="display">Bao cutting service unavailable</b><span>唔好意思 不設切包服務</span></li>
+      <li><b class="display">Many thanks to our local farms</b><span>多謝支持本地農場</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SIGNATURES ================= -->
+<section class="sec reveal" id="signatures">
+  <div class="wrap">
+    <header class="sechead">
+      <div>
+        <p class="lbl"><span data-l="zh">唔知食咩就叫呢啲</span><span data-l="en">Order these first</span></p>
+        <h2><span data-l="zh">最容易令你喊<br>嘅嘢</span><span data-l="en">Most likely to<br>make you cry</span></h2>
+        <p class="sechead__alt"><span data-l="zh">開心嗰種眼淚</span><span data-l="en">(happy tears)</span></p>
+      </div>
+      <p class="sechead__note">
+        <span data-l="zh">如果由廚房幫你揀，佢哋會端呢七樣出嚟。用食物模型影，好似樓下鋪頭個櫥窗咁。價錢港幣，直接抄自餐牌。</span>
+        <span data-l="en">Seven things the kitchen would put in front of you if you let them choose — shown as 食物模型, the way a shopfront window does it. Prices in HKD, straight off the printed menu.</span>
+      </p>
+    </header>
+
+    <div class="dishes">
+      <article class="dish dish--row" style="--span:7">
+        <div class="dish__ph" style="--phw:300px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-burger-800.webp 800w, assets/img/model-burger-1280.webp 1280w" sizes="(max-width:700px) 100vw, 300px">
+            <img src="assets/img/model-burger-800.jpg" alt="Display replica of the house cheese burger" width="800" height="667" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <p class="dish__zh">招牌!!! 手打牛肉漢堡</p>
+          <h3 class="display">House Cheese Burger</h3>
+          <p class="dish__desc"><span data-l="zh">高達芝士 · 鯷魚蛋黃醬 · 炸酸洋蔥圈。可自選配料，每款加 $10。</span><span data-l="en">Gouda cheese · anchovy mayo · pickled onion rings. Build your own — add-ons $10 each.</span></p>
+          <p class="price display">$138</p>
+        </div>
+      </article>
+
+      <article class="dish" style="--span:5">
+        <div class="dish__ph" style="--phh:268px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-crab-bao-900.webp 900w, assets/img/model-crab-bao-1400.webp 1400w" sizes="(max-width:700px) 100vw, 480px">
+            <img src="assets/img/model-crab-bao-900.jpg" alt="Display replica of the soft shell crab bao" width="900" height="506" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <p class="dish__zh">牛油果紫菜炸軟殼蟹包</p>
+          <h3 class="display">Soft Shell Crab Bao</h3>
+          <p class="dish__desc"><span data-l="zh">牛油果 · 紫菜蛋黃醬</span><span data-l="en">Avocado · nori mayo</span></p>
+          <p class="price display">$108</p>
+        </div>
+      </article>
+
+      <article class="dish" style="--span:4">
+        <div class="dish__ph" style="--phh:228px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-onion-rings-720.webp 720w, assets/img/model-onion-rings-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+            <img src="assets/img/model-onion-rings-720.jpg" alt="Display replica of the pickled onion rings" width="720" height="432" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <span class="veg" title="Vegan 純素">V</span>
+          <p class="dish__zh">炸酸洋蔥圈</p>
+          <h3 class="display">Pickled Onion Ring</h3>
+          <p class="dish__desc"><span data-l="zh">他他醬。招牌吉祥物，落咗油鑊。</span><span data-l="en">Tartar. The house mascot, battered.</span></p>
+          <p class="price display">$56</p>
+        </div>
+      </article>
+
+      <article class="dish" style="--span:4">
+        <div class="dish__ph" style="--phh:228px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-fries-720.webp 720w, assets/img/model-fries-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+            <img src="assets/img/model-fries-720.jpg" alt="Display replica of the loaded cheese fries" width="720" height="432" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <p class="dish__zh">混醬芝士酸洋蔥辣薯條</p>
+          <h3 class="display">Loaded Cheese Fries</h3>
+          <p class="dish__desc"><span data-l="zh">酸洋蔥同墨西哥辣椒</span><span data-l="en">Pickled onion &amp; jalapeño</span></p>
+          <p class="price display">$66</p>
+        </div>
+      </article>
+
+      <article class="dish" style="--span:4">
+        <div class="dish__ph" style="--phh:228px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-duck-720.webp 720w, assets/img/model-duck-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+            <img src="assets/img/model-duck-720.jpg" alt="Display replica of the confit duck leg riso" width="720" height="432" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <p class="dish__zh">油浸鴨脾蒿筍蟲草花粒粒粉</p>
+          <h3 class="display">Confit Duck Leg Riso</h3>
+          <p class="dish__desc"><span data-l="zh">萵筍 · 菌 · 橙皮</span><span data-l="en">Celtuce · fungus · orange zest</span></p>
+          <p class="price display">$108</p>
+        </div>
+      </article>
+
+      <article class="dish dish--row dish--flip" style="--span:7">
+        <div class="dish__txt">
+          <p class="dish__zh">陀地鬼佬鬼佬陀地西多</p>
+          <h3 class="display">PB &amp; J French Toast</h3>
+          <p class="dish__desc"><span data-l="zh">花生醬芭菲、果醬。歸類喺「第二個胃」。</span><span data-l="en">Peanut butter parfait, jam. Filed under 第二個胃 — the second stomach.</span></p>
+          <p class="price display">$66</p>
+        </div>
+        <div class="dish__ph" style="--phw:300px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-french-toast-800.webp 800w, assets/img/model-french-toast-1280.webp 1280w" sizes="(max-width:700px) 100vw, 300px">
+            <img src="assets/img/model-french-toast-800.jpg" alt="Display replica of the PB and J french toast" width="800" height="667" loading="lazy" decoding="async">
+          </picture>
+        </div>
+      </article>
+
+      <article class="dish" style="--span:5">
+        <div class="dish__ph" style="--phh:300px">
+          <picture>
+            <source type="image/webp" srcset="assets/img/model-drink-800.webp 800w, assets/img/model-drink-1200.webp 1200w" sizes="(max-width:700px) 100vw, 480px">
+            <img src="assets/img/model-drink-800.jpg" alt="Display replica of the green cucumber drink" width="800" height="533" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="dish__txt">
+          <p class="dish__zh">杯上面寫住</p>
+          <h3 class="display">Please Don’t Cry</h3>
+          <p class="dish__desc"><span data-l="zh">青青嗰杯，青瓜片，細細個骷髏頭飲管針。隻杯上面已經寫咗。</span><span data-l="en">The green one, cucumber ribbon, tiny skull pick. It says so right on the glass.</span></p>
+          <p class="price display">$45</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FULL MENU ================= -->
+<section class="sec sec--menu reveal" id="menu">
+  <div class="wrap">
+    <header class="sechead">
+      <div>
+        <p class="lbl lbl--o"><span data-l="zh">其餘全部</span><span data-l="en">Everything else</span></p>
+        <h2><span data-l="zh">全部餐牌</span><span data-l="en">The whole thing</span></h2>
+        <p class="sechead__alt"><span data-l="zh">The whole thing</span><span data-l="en">全部餐牌</span></p>
+      </div>
+      <p class="stamp">
+        <b class="display">Bao cutting service unavailable</b>
+        <span>唔好意思 不設切包服務</span>
+      </p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Menu sections">
+      <button class="tab is-on" role="tab" id="tab-small"   aria-controls="p-small"   aria-selected="true"><span class="tab__zh">前菜</span><span class="tab__en display">Small Plate</span></button>
+      <button class="tab"       role="tab" id="tab-fried"   aria-controls="p-fried"   aria-selected="false" tabindex="-1"><span class="tab__zh">曳野！</span><span class="tab__en display">Deep Fried Everythong!</span></button>
+      <button class="tab"       role="tab" id="tab-bao"     aria-controls="p-bao"     aria-selected="false" tabindex="-1"><span class="tab__zh">包 / 治</span><span class="tab__en display">Bao / Sandwich</span></button>
+      <button class="tab"       role="tab" id="tab-pasta"   aria-controls="p-pasta"   aria-selected="false" tabindex="-1"><span class="tab__zh">意粉</span><span class="tab__en display">Pasta</span></button>
+      <button class="tab"       role="tab" id="tab-not"     aria-controls="p-not"     aria-selected="false" tabindex="-1"><span class="tab__zh">唔係包又唔係意粉</span><span class="tab__en display">Not Bao or Pasta</span></button>
+      <button class="tab"       role="tab" id="tab-dessert" aria-controls="p-dessert" aria-selected="false" tabindex="-1"><span class="tab__zh">第二個胃</span><span class="tab__en display">Dessert</span></button>
+    </div>
+
+    <div class="menucard">
+      <section class="panel" id="p-small" role="tabpanel" aria-labelledby="tab-small" tabindex="0">
+        <h3 class="panel__h"><span class="display">Small Plate</span><span class="panel__zh">前菜</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">是日靚包</p><p class="mi__r"><span class="mi__en display">Daily Bread</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$22</span></p></li>
+          <li class="mi"><p class="mi__zh">泡菜</p><p class="mi__r"><span class="mi__en display">Kimchi</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$28</span></p></li>
+          <li class="mi"><p class="mi__zh">牛油果薯仔沙律</p><p class="mi__r"><span class="mi__en display">Avocado Potato Salad</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">baby spinach / grape</p></li>
+          <li class="mi"><p class="mi__zh">煙肉薯仔沙律</p><p class="mi__r"><span class="mi__en display">Bacon Potato Salad</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">baby spinach / grape</p></li>
+          <li class="mi"><p class="mi__zh">墨西哥牛油果醬配炸餃子皮</p><p class="mi__r"><span class="mi__en display">Guacamole w/ Dumpling Skin Chips</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">tomato / pickled onion</p></li>
+          <li class="mi"><p class="mi__zh">蒜香辣炒本地菜（多謝支持本地農場）</p><p class="mi__r"><span class="mi__en display">Stir Fried Veg (Local Farm)</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">confit garlic / almond flakes / chili flakes</p></li>
+          <li class="mi"><p class="mi__zh">李派林香草牛油燒大蝦（兩隻）</p><p class="mi__r"><span class="mi__en display">Grilled Tiger Prawns (2pcs)</span><i></i><span class="mi__p display">$78</span></p><p class="mi__d">worcestershire herb butter</p></li>
+          <li class="mi"><p class="mi__zh">合桃蘋果沙律（多謝支持本地農場）</p><p class="mi__r"><span class="mi__en display">Apple Salad (Local Farm)</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">candied walnut</p></li>
+          <li class="mi"><p class="mi__zh">花生醬青瓜苦瓜哈蜜瓜沙律</p><p class="mi__r"><span class="mi__en display">Cucumber, Pickled Bitter Melon, Melon Salad</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">peanut butter salad dressing / cashew nuts</p></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-fried" role="tabpanel" aria-labelledby="tab-fried" tabindex="0" hidden>
+        <h3 class="panel__h"><span class="display">Deep Fried Everythong!</span><span class="panel__zh">曳野！</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">薯條</p><p class="mi__r"><span class="mi__en display">Fries</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$46</span></p></li>
+          <li class="mi"><p class="mi__zh">鹽酥菇</p><p class="mi__r"><span class="mi__en display">Deep Fried Mushroom</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$56</span></p></li>
+          <li class="mi"><p class="mi__zh">炸酸洋蔥圈</p><p class="mi__r"><span class="mi__en display">Pickled Onion Ring</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">tartar</p></li>
+          <li class="mi"><p class="mi__zh">勁樂雞（6pcs / 12pcs / 18pcs）</p><p class="mi__r"><span class="mi__en display">Real Chicken Chicken Nugget</span><i></i><span class="mi__p display">$56 / $102 / $144</span></p><p class="mi__d">honey mustard</p></li>
+          <li class="mi"><p class="mi__zh">阿媽雞翼 2.0 之阿麻雞翼（單骨雞翼 8 條）</p><p class="mi__r"><span class="mi__en display">Wings (Single-Boned 8pcs)</span><i></i><span class="mi__p display">$56</span></p><p class="mi__d">sesame soy sauce</p></li>
+          <li class="mi"><p class="mi__zh">菠蘿辣椒醬雞翼（單骨雞翼 8 條）</p><p class="mi__r"><span class="mi__en display">Wings (Single-Boned 8pcs)</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">fermented pineapple hot sauce / grilled pineapple</p></li>
+          <li class="mi"><p class="mi__zh">混醬芝士酸洋蔥辣薯條</p><p class="mi__r"><span class="mi__en display">Loaded Cheese Fries</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">pickled onion &amp; jalapeño</p></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-bao" role="tabpanel" aria-labelledby="tab-bao" tabindex="0" hidden>
+        <h3 class="panel__h"><span class="display">Bao / Sandwich</span><span class="panel__zh">包 / 治</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">招牌!!! 手打牛肉漢堡</p><p class="mi__r"><span class="mi__en display">House Cheese Burger</span><i></i><span class="mi__p display">$138</span></p><p class="mi__d">gouda cheese / anchovy mayo / pickled onion rings · build your own, add-ons $10 each</p></li>
+          <li class="mi"><p class="mi__zh">Butter Chicken 炸雞包</p><p class="mi__r"><span class="mi__en display">Deep Fried Butter Chicken Bao</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">herb yoghurt dressing</p></li>
+          <li class="mi"><p class="mi__zh">泡菜煎蛋豬腩肉包（小辣）</p><p class="mi__r"><span class="mi__en display">Grilled Pork Belly Bao</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">fried egg / kimchi / gochujang mayo</p></li>
+          <li class="mi"><p class="mi__zh">辣辣雙層菠蘿芝士豬柳包</p><p class="mi__r"><span class="mi__en display">Spicy Pork Burger</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">grilled pineapple</p></li>
+          <li class="mi"><p class="mi__zh">牛油果紫菜炸軟殼蟹包</p><p class="mi__r"><span class="mi__en display">Deep Fried Soft Shell Crab Bao</span><i></i><span class="mi__p display">$108</span></p><p class="mi__d">avocado / nori mayo</p></li>
+          <li class="mi"><p class="mi__zh">酸菜他他炸海鱸魚柳包</p><p class="mi__r"><span class="mi__en display">Deep Fried Sea Bass Burger</span><i></i><span class="mi__p display">$138</span></p><p class="mi__d">sauerkraut tartar sauce</p></li>
+          <li class="mi"><p class="mi__zh">茄蛋治（多謝支持本地農場）</p><p class="mi__r"><span class="mi__en display">Heirloom Tomato Open Sandwich</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">fried egg / gouda cheese</p></li>
+          <li class="mi"><p class="mi__zh">堅堅包 2.0</p><p class="mi__r"><span class="mi__en display">Green Green Bao 2.0</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$72</span></p><p class="mi__d">avocado / chickpea / alfalfa sprout / butter lettuce / vegan mayo</p></li>
+          <li class="mi"><p class="mi__zh">麻醬涼拌三絲炸豆腐包</p><p class="mi__r"><span class="mi__en display">Deep Fried Tofu Bao</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">carrot / cucumber / king oyster mushroom</p></li>
+          <li class="mi"><p class="mi__zh">焦糖洋蔥菇菇蕃薯包</p><p class="mi__r"><span class="mi__en display">Portobello &amp; Sweet Potato Bao</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$88</span></p><p class="mi__d">caramelized onion / pickled onion ring</p></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-pasta" role="tabpanel" aria-labelledby="tab-pasta" tabindex="0" hidden>
+        <h3 class="panel__h"><span class="display">Pasta</span><span class="panel__zh">意粉</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">大蝦濃蝦龍蝦汁扁意粉</p><p class="mi__r"><span class="mi__en display">Tiger Prawns Pasta</span><i></i><span class="mi__p display">$138</span></p><p class="mi__d">creamy lobster sauce</p></li>
+          <li class="mi"><p class="mi__zh">鮮藍青口豆豉忌廉扁意粉</p><p class="mi__r"><span class="mi__en display">Fresh Mussels Pasta</span><i></i><span class="mi__p display">$108</span></p><p class="mi__d">pickled sugar snap peas / black bean cream sauce</p></li>
+          <li class="mi"><p class="mi__zh">溫泉蛋肉醬意粉</p><p class="mi__r"><span class="mi__en display">Linguine Bolognese</span><i></i><span class="mi__p display">$108</span></p><p class="mi__d">63C egg / parmesan cheese</p></li>
+          <li class="mi"><p class="mi__zh">油浸鴨脾蒿筍蟲草花粒粒粉</p><p class="mi__r"><span class="mi__en display">Confit Duck Leg Riso Pasta</span><i></i><span class="mi__p display">$108</span></p><p class="mi__d">celtuce / fungus / orange zest</p></li>
+          <li class="mi"><p class="mi__zh">卡邦尼扁意粉</p><p class="mi__r"><span class="mi__en display">Carbonara</span><i></i><span class="mi__p display">$98</span></p></li>
+          <li class="mi"><p class="mi__zh">瓜瓜菜菜炒粒粒粉 2.0</p><p class="mi__r"><span class="mi__en display">Stir Fried Riso Pasta</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$98</span></p><p class="mi__d">local veg / zucchini / cherry tomatoes / pine nuts / raisins</p></li>
+          <li class="mi"><p class="mi__zh">白汁鉛筆菇菇扁意粉</p><p class="mi__r"><span class="mi__en display">Mushroom Sauce Pasta</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$98</span></p><p class="mi__d">chestnut royale mushroom / arugula</p></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-not" role="tabpanel" aria-labelledby="tab-not" tabindex="0" hidden>
+        <h3 class="panel__h"><span class="display">Not Bao or Pasta</span><span class="panel__zh">唔係包又唔係意粉</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">安格斯封門柳薯條</p><p class="mi__r"><span class="mi__en display">Angus Hanger Steak w/ Fries</span><i></i><span class="mi__p display">$248</span></p><p class="mi__d">worcestershire sauce herb butter</p></li>
+          <li class="mi"><p class="mi__zh">大蒜茴香煮青口配紫菜包</p><p class="mi__r"><span class="mi__en display">Leek &amp; Fennel Mussels</span><i></i><span class="mi__p display">$128</span></p><p class="mi__d">w/ nori ciabatta</p></li>
+          <li class="mi"><p class="mi__zh">青咖哩軟殼蟹柚子沙律</p><p class="mi__r"><span class="mi__en display">Green Curry Soft Shell Crab Salad</span><i></i><span class="mi__p display">$108</span></p><p class="mi__d">pomelo / pickled cucumber / grilled bread</p></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-dessert" role="tabpanel" aria-labelledby="tab-dessert" tabindex="0" hidden>
+        <h3 class="panel__h"><span class="display">Dessert</span><span class="panel__zh">第二個胃</span></h3>
+        <ul class="mlist">
+          <li class="mi"><p class="mi__zh">陀地鬼佬鬼佬陀地西多</p><p class="mi__r"><span class="mi__en display">PB &amp; J French Toast</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">peanut butter parfait, jam</p></li>
+          <li class="mi"><p class="mi__zh">椰棗麵包布甸 + 普洱白朱古力雪糕</p><p class="mi__r"><span class="mi__en display">Medjool Date Bread Pudding</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">pu’er &amp; white chocolate ice cream, roselle cream</p></li>
+          <li class="mi"><p class="mi__zh">士多啤梨芝士蛋糕 + 白麵豉雪糕</p><p class="mi__r"><span class="mi__en display">Strawberry Cheesecake</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">miso ice cream</p></li>
+          <li class="mi"><p class="mi__zh">燒蕃薯 + 薑豆奶雪糕</p><p class="mi__r"><span class="mi__en display">Roasted Sweet Potato</span><span class="veg veg--sm">V</span><i></i><span class="mi__p display">$66</span></p><p class="mi__d">ginger soy milk ice cream</p></li>
+        </ul>
+      </section>
+
+      <p class="menucard__foot">
+        <span class="veg">V</span>
+        <span class="display">Vegan 純素</span>
+        <span class="menucard__note"><span data-l="zh">免收加一 歡迎打賞 · No service charge, tips welcomed</span><span data-l="en">No service charge, tips welcomed · 免收加一 歡迎打賞</span></span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMBO ================= -->
+<section class="combo reveal" aria-label="Combo">
+  <div class="wrap combo__in">
+    <div>
+      <p class="lbl"><span data-l="zh">咳停一人餐 Combo</span><span data-l="en">Combo 咳停一人餐</span></p>
+      <h2 class="combo__h"><span data-l="zh">加一款小食<br>就送你一杯野飲</span><span data-l="en">One small dish<br>and the drink is free</span></h2>
+      <p class="combo__p"><span data-l="zh">揀包或意粉或主食，加購任何一款小食，就送你一杯 $45 嘅野飲。啤酒跟餐加 $30。</span><span data-l="en">Get any bao, pasta or main together with one small dish, and a $45 drink is on the house. Make it a beer for $30 more.</span></p>
+      <p class="combo__p combo__p--alt"><span data-l="zh">Get any bao, pasta or main with one small dish and a $45 drink is on the house.</span><span data-l="en">揀包或意粉或主食，加一款小食，送你一杯 $45 嘅野飲。</span></p>
+    </div>
+
+    <img class="combo__guy" src="assets/img/mark-burgerguy.png" alt="" width="200" height="301" loading="lazy">
+
+    <div class="steak">
+      <p class="lbl lbl--o"><span data-l="zh">一人份</span><span data-l="en">Set of one</span></p>
+      <h3 class="display">Happy Steak Meal</h3>
+      <p class="steak__zh">咳停獨食封門柳扒餐</p>
+      <ul>
+        <li><span data-l="zh">香草蒜茸牛油封門柳扒</span><span data-l="en">Grilled hanger steak, garlic herb butter</span></li>
+        <li><span data-l="zh">是日靚湯 + 是日炒本地靚菜</span><span data-l="en">Daily soup &amp; stir fried local veg</span></li>
+        <li><span data-l="zh">薯條或茄汁意粉</span><span data-l="en">Fries or pasta in tomato sauce</span></li>
+        <li><span data-l="zh">包一杯 $45 嘅野飲（啤酒加 $30）</span><span data-l="en">A $45 drink included (+$30 for a beer)</span></li>
+      </ul>
+      <p class="steak__price display">$330</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="sec reveal" id="gallery">
+  <div class="wrap">
+    <header class="sechead">
+      <div>
+        <p class="lbl"><span data-l="zh">證據</span><span data-l="en">Proof</span></p>
+        <h2><span data-l="zh">喊得好開心<br>嘅現場</span><span data-l="en">Seen crying<br>happily</span></h2>
+        <p class="sechead__alt"><span data-l="zh">Seen crying happily</span><span data-l="en">現場證據</span></p>
+      </div>
+      <p class="sechead__note">
+        <span data-l="zh">呢度全部都係廚房出品，未經修圖。隨時換返你哋自己啲相。</span>
+        <span data-l="en">Everything here came off the pass, unretouched. Swap in your own shots any time.</span>
+      </p>
+    </header>
+
+    <div class="gal">
+      <figure class="gt" style="--span:5;--h:420px">
+        <picture>
+          <source type="image/webp" srcset="assets/img/shot-sign-700.webp 700w, assets/img/shot-sign-1100.webp 1100w" sizes="(max-width:700px) 100vw, 480px">
+          <img src="assets/img/shot-sign-700.jpg" alt="The Cutting Onions sign lit up at night" width="700" height="700" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <figure class="gt gt--o" style="--span:3;--h:420px">
+        <img class="gt__onion" src="assets/img/mark-onion.png" alt="" width="116" height="121" loading="lazy">
+        <b class="display">Please<br>Don’t<br>Cry</b>
+        <span>唔好喊</span>
+      </figure>
+
+      <figure class="gt" style="--span:4;--h:420px">
+        <picture>
+          <source type="image/webp" srcset="assets/img/shot-beer-700.webp 700w, assets/img/shot-beer-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+          <img src="assets/img/shot-beer-700.jpg" alt="Craft beer poured into a Please Don’t Cry glass" width="700" height="525" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <figure class="gt" style="--span:4;--h:300px">
+        <picture>
+          <source type="image/webp" srcset="assets/img/shot-burgers-700.webp 700w, assets/img/shot-burgers-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+          <img src="assets/img/shot-burgers-700.jpg" alt="Two burgers in paper cones on steel plates" width="700" height="525" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <figure class="gt gt--k" style="--span:4;--h:300px">
+        <span class="lbl lbl--o"><span data-l="zh">跟住我哋</span><span data-l="en">Follow along</span></span>
+        <b class="display">[@cuttingonions]</b>
+        <a class="btn btn--sm" href="https://instagram.com/[HANDLE]" rel="noopener"><span data-l="zh">睇 Instagram</span><span data-l="en">Open Instagram</span></a>
+      </figure>
+
+      <figure class="gt" style="--span:4;--h:300px">
+        <picture>
+          <source type="image/webp" srcset="assets/img/shot-drink-700.webp 700w, assets/img/shot-drink-1100.webp 1100w" sizes="(max-width:700px) 100vw, 380px">
+          <img src="assets/img/shot-drink-700.jpg" alt="The green cucumber drink with a skull pick" width="700" height="525" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="sec sec--visit reveal" id="visit">
+  <div class="wrap">
+    <header class="sechead">
+      <div>
+        <p class="lbl"><span data-l="zh">搵我哋</span><span data-l="en">Come find us</span></p>
+        <h2><span data-l="zh">嚟一齊喊啦</span><span data-l="en">Cry with us</span></h2>
+        <p class="sechead__alt"><span data-l="zh">Come cry with us</span><span data-l="en">嚟一齊喊啦</span></p>
+      </div>
+      <a class="btn" href="[BOOKING-LINK]"><span data-l="zh">訂枱</span><span data-l="en">Book a table</span></a>
+    </header>
+
+    <div class="visit">
+      <dl class="visit__card">
+        <div class="vrow">
+          <dt class="lbl"><span data-l="zh">地址</span><span data-l="en">Address</span></dt>
+          <dd><b class="display">[Shop / Street]</b><span>[舖號／街道]</span></dd>
+        </div>
+        <div class="vrow">
+          <dt class="lbl"><span data-l="zh">地區</span><span data-l="en">District</span></dt>
+          <dd><b class="display">[District], Hong Kong</b><span>[地區]，香港</span></dd>
+        </div>
+        <div class="vrow">
+          <dt class="lbl"><span data-l="zh">營業時間</span><span data-l="en">Hours</span></dt>
+          <dd><b class="display">Lunch [12:00–15:00] · Dinner [18:00–23:00]</b><span>午市 · 晚市</span></dd>
+        </div>
+        <div class="vrow">
+          <dt class="lbl"><span data-l="zh">電話</span><span data-l="en">Phone</span></dt>
+          <dd><b class="display"><a href="tel:[+85200000000]">[+852 0000 0000]</a></b><span><span data-l="zh">訂枱／查詢</span><span data-l="en">Booking / enquiries</span></span></dd>
+        </div>
+      </dl>
+
+      <div class="visit__map">
+        <svg viewBox="0 0 420 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map placeholder — replace with the real location">
+          <rect width="420" height="340" fill="#EFE6D3"/>
+          <g stroke="#D6C7AB" stroke-width="12" stroke-linecap="square"><path d="M-10 92h440M-10 236h440M118 -10v360M296 -10v360"/></g>
+          <g stroke="#DDD0B7" stroke-width="5"><path d="M-10 160h440M212 -10v360"/></g>
+          <rect x="128" y="102" width="72" height="48" fill="#E4D7BE"/>
+          <rect x="306" y="246" width="86" height="56" fill="#E4D7BE"/>
+          <circle cx="212" cy="160" r="46" fill="none" stroke="#F4501B" stroke-width="3" stroke-dasharray="8 9"/>
+          <path d="M212 130c-13 0-23 10-23 23 0 17 23 39 23 39s23-22 23-39c0-13-10-23-23-23Z" fill="#F4501B" stroke="#14100D" stroke-width="3.5"/>
+          <circle cx="212" cy="153" r="7.5" fill="#14100D"/>
+        </svg>
+        <p class="visit__tag lbl"><span data-l="zh">[換上真實地圖]</span><span data-l="en">[Pin the exact spot]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <a class="brand" href="#top">
+        <span class="brand__disc"><img src="assets/img/logo-face.png" alt="" width="48" height="48" loading="lazy"></span>
+        <span class="brand__name">Cutting<br>Onions</span>
+      </a>
+      <nav class="foot__links" aria-label="Footer">
+        <a href="#story"><span data-l="zh">故事</span><span data-l="en">Story</span></a>
+        <a href="#menu"><span data-l="zh">餐牌</span><span data-l="en">Menu</span></a>
+        <a href="#gallery"><span data-l="zh">相片</span><span data-l="en">Gallery</span></a>
+        <a href="#visit"><span data-l="zh">到訪</span><span data-l="en">Visit</span></a>
+        <a href="https://instagram.com/[HANDLE]" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+
+    <p class="foot__word display" aria-hidden="true">Cutting Onîons</p>
+
+    <div class="foot__bar">
+      <p>© <span id="year">2026</span> Cutting Onions · [Shop / Street], [District], Hong Kong</p>
+      <p class="foot__zh">免收加一 · 歡迎打賞 · 你快樂所以我快樂 :)</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/onion-field.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

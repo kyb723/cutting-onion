@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+HK:wght@400;500;700;900&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #14100D; }
+    a { color: #F4501B; } a:hover { color: #C93A0F; }
+    .mo {
+      --orange: #F4501B; --ink: #14100D; --paper: #F6EFE1; --paper-hi: #FCF8EF; --cuke: #8FBF2E;
+      --dim: rgba(246,239,225,.62);
+      --disp: 'Rammetto One', 'Arial Black', sans-serif;
+      --body: 'Archivo', 'Noto Sans HK', system-ui, sans-serif;
+      --han: 'Noto Sans HK', 'PingFang HK', system-ui, sans-serif;
+      width: 1080px; padding: 56px; background: var(--ink); color: var(--paper); font-family: var(--body);
+    }
+    .lbl { font-weight: 800; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); }
+    h1 { margin: 10px 0 0; font-family: var(--disp); font-size: 46px; text-transform: uppercase; line-height: .95; }
+    .lede { margin: 14px 0 0; max-width: 660px; font-size: 15px; line-height: 1.65; color: var(--dim); }
+    .hr { height: 4px; background: var(--orange); margin: 38px 0 32px; }
+    .beats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .beat { display: flex; flex-direction: column; border: 3px solid rgba(246,239,225,.28); background: rgba(246,239,225,.04); }
+    .beat-fig { height: 128px; display: flex; align-items: center; justify-content: center; background: rgba(246,239,225,.06); border-bottom: 3px solid rgba(246,239,225,.28); }
+    .beat-b { padding: 20px 22px 22px; }
+    .beat-h { display: flex; align-items: center; gap: 11px; }
+    .beat-h .n { flex: none; width: 27px; height: 27px; border-radius: 50%; background: var(--orange); color: var(--ink); font-family: var(--disp); font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    .beat-h b { font-family: var(--disp); font-weight: 400; font-size: 16px; text-transform: uppercase; line-height: 1.1; }
+    .beat-b p { margin: 11px 0 0; font-size: 13.5px; line-height: 1.62; color: var(--dim); }
+    .beat-b .spec { margin-top: 11px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .beat-b .spec span { font-weight: 700; font-size: 11px; letter-spacing: .04em; padding: 5px 9px; border: 2px solid rgba(246,239,225,.3); border-radius: 999px; color: var(--paper); }
+    .foot { margin-top: 34px; padding: 26px 28px; border: 3px solid var(--orange); }
+    .foot h3 { margin: 0 0 14px; font-family: var(--disp); font-size: 16px; text-transform: uppercase; color: var(--orange); }
+    .foot ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px 30px; }
+    .foot li { position: relative; padding-left: 17px; font-size: 13.5px; line-height: 1.6; color: var(--dim); }
+    .foot li::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+    .foot li b { color: var(--paper); font-weight: 800; }
+  </style>
+</helmet>
+
+<div class="mo">
+  <div class="lbl">Cutting Onions · Motion &amp; interaction</div>
+  <h1>How it moves</h1>
+  <p class="lede">One idea runs through every animation: the page starts by making you cry and then refuses to let you. Motion is chunky and physical — squash, snap, hard shadows landing — never floaty fades.</p>
+
+  <div class="hr"></div>
+
+  <div class="beats">
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <circle cx="64" cy="46" r="34" fill="#F4501B" stroke="#F6EFE1" stroke-width="3"></circle>
+          <path d="M50 40c4-4 9-4 13 0M65 40c4-4 9-4 13 0" stroke="#14100D" stroke-width="3" stroke-linecap="round"></path>
+          <ellipse cx="64" cy="58" rx="11" ry="8" fill="#14100D"></ellipse>
+          <g fill="#F4501B" stroke="#F6EFE1" stroke-width="2.4">
+            <path d="M52 82c0 3-2 5-4.5 5S43 85 43 82s4.5-8 4.5-8 4.5 5 4.5 8Z"></path>
+            <path d="M87 94c0 3-2 5-4.5 5S78 97 78 94s4.5-8 4.5-8 4.5 5 4.5 8Z" opacity=".6"></path>
+          </g>
+          <path d="M150 24v44l10-10 6 14 7-3-6-14h14L150 24Z" fill="#F6EFE1" stroke="#14100D" stroke-width="2.5" stroke-linejoin="round"></path>
+          <path d="M186 82c0 3-2 5-4.5 5s-4.5-2-4.5-5 4.5-8 4.5-8 4.5 5 4.5 8Z" fill="#F4501B" stroke="#F6EFE1" stroke-width="2.4"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">1</span><b>The onion field</b></div>
+        <p>Seventy-odd onions — each one the sunglasses mark off her glassware, drawn round with no legs and no lettering — drift under a soft pull toward the centre, piling into a heap that buries the icon. The cursor carries a repulsion field, so simply moving through parts the pile. Plain 2D canvas, hand-rolled solver — no physics library, no WebGL.</p>
+        <div class="spec"><span>~74 bodies</span><span>60fps</span><span>zero dependencies</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <path d="M14 88 118 14" stroke="#F4501B" stroke-width="4" stroke-linecap="round"></path>
+          <path d="M92 30 118 14l-8 28" fill="#F6EFE1"></path>
+          <g stroke="#F6EFE1" stroke-width="2.6" stroke-linejoin="round">
+            <path d="M150 22c14 2 20 14 20 26s-8 22-20 24z" fill="#F4501B"></path>
+            <path d="M206 20c-14 2-20 14-20 26s8 22 20 24z" fill="#F4501B"></path>
+          </g>
+          <g stroke="#FCF8EF" stroke-width="2.2" fill="none">
+            <path d="M150 32c7 3 10 8 10 16s-4 13-10 16"></path>
+            <path d="M150 42c4 2 5 4 5 6s-2 5-5 6"></path>
+            <path d="M206 30c-7 3-10 8-10 18s4 13 10 16"></path>
+            <path d="M206 41c-4 2-5 4-5 7s2 5 5 6"></path>
+          </g>
+          <path d="M176 78c0 3-2 5-4 5s-4-2-4-5 4-8 4-8 4 5 4 8Z" fill="#F4501B" stroke="#F6EFE1" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">2</span><b>Drag to cut</b></div>
+        <p>Move fast enough and the cursor stops pushing and starts cutting. Every onion the stroke sweeps through splits into two halves that fly apart along the blade, tumbling and showing their rings on the cut face — and each cut throws off a tear or two. The blade leaves a fading orange trail.</p>
+        <div class="spec"><span>threshold 7px/frame</span><span>halves + rings</span><span>1–2 tears per cut</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <rect x="8" y="30" width="214" height="40" fill="rgba(246,239,225,.08)" stroke="rgba(246,239,225,.3)" stroke-width="2.5"></rect>
+          <g fill="#F6EFE1">
+            <rect x="20" y="44" width="42" height="11" rx="2"></rect>
+            <rect x="96" y="44" width="34" height="11" rx="2"></rect>
+            <rect x="166" y="44" width="46" height="11" rx="2"></rect>
+          </g>
+          <g fill="#F4501B">
+            <path d="M76 44.5 79 50l5.5 1.5L79 53l-3 5.5-3-5.5-5.5-1.5L73 50Z"></path>
+            <path d="M146 44.5 149 50l5.5 1.5L149 53l-3 5.5-3-5.5-5.5-1.5L143 50Z"></path>
+          </g>
+          <path d="M186 84h-58M128 84l9-6M128 84l9 6" stroke="#F4501B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">3</span><b>The ticker never stops</b></div>
+        <p>A black strip of menu jokes rolls under the hero — PLEASE DON’T CRY · 唔好喊 · DEEP FRIED EVERYTHONG! · 曳野！ Hovering pauses it so people can actually read the line that made them stop. The footer runs the same strip in reverse.</p>
+        <div class="spec"><span>34s per cycle</span><span>pause on hover</span><span>reversed in footer</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <circle cx="52" cy="50" r="32" fill="#F6EFE1" stroke="#F6EFE1" stroke-width="3"></circle>
+          <path d="M38 44c4-4 9-4 13 0M53 44c4-4 9-4 13 0" stroke="#14100D" stroke-width="3" stroke-linecap="round"></path>
+          <ellipse cx="52" cy="61" rx="10" ry="7" fill="#14100D"></ellipse>
+          <path d="M96 50h38M124 42l10 8-10 8" stroke="#F4501B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+          <circle cx="178" cy="50" r="32" fill="#F4501B" stroke="#F4501B" stroke-width="3"></circle>
+          <path d="M178 18c-3 0-4 3-2 5" stroke="#14100D" stroke-width="3" stroke-linecap="round"></path>
+          <rect x="158" y="42" width="18" height="13" rx="4" fill="#14100D"></rect>
+          <rect x="180" y="42" width="18" height="13" rx="4" fill="#14100D"></rect>
+          <path d="M176 48h4" stroke="#14100D" stroke-width="3"></path>
+          <path d="M166 66c7 5 17 5 24 0" stroke="#14100D" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">4</span><b>Fourteen cuts in</b></div>
+        <p>The payoff. The field is made of onions already wearing the sunglasses; buried under them is the face still crying. Cut fourteen away, the icon stands clear, and the corner prompt changes from 拖曳，切啲洋蔥 to 而家好啲未？ You cut the onions, and nobody ends up crying.</p>
+        <div class="spec"><span>at 14 cuts</span><span>icon fully clear</span><span>once per visit</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <rect x="14" y="14" width="202" height="26" fill="rgba(246,239,225,.14)"></rect>
+          <path d="M0 52h230" stroke="#F4501B" stroke-width="3.5"></path>
+          <path d="M150 36v14l10-6 8 12 7-4-8-12h14L150 36Z" fill="#F6EFE1" stroke="#14100D" stroke-width="2.5" stroke-linejoin="round"></path>
+          <rect x="14" y="66" width="202" height="24" fill="rgba(246,239,225,.3)"></rect>
+          <path d="M40 92v-14M40 78l-5 6M40 78l5 6" stroke="#F4501B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">5</span><b>Sections get cut open</b></div>
+        <p>Instead of fading in, each section is revealed by a thin orange line that sweeps the full width like a knife through an onion — then the content below slides up 24px behind it. Cheap to run, and it makes the whole page feel like one continuous chop.</p>
+        <div class="spec"><span>wipe 340ms</span><span>rise 24px</span><span>fires once per section</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <rect x="34" y="30" width="120" height="58" fill="rgba(246,239,225,.22)"></rect>
+          <rect x="24" y="20" width="120" height="58" fill="rgba(246,239,225,.1)" stroke="#F6EFE1" stroke-width="3"></rect>
+          <rect x="112" y="10" width="46" height="24" rx="12" fill="#F4501B" stroke="#F6EFE1" stroke-width="2.5" transform="rotate(-7 135 22)"></rect>
+          <path d="M186 74V34M186 34l-7 8M186 34l7 8" stroke="#F4501B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">6</span><b>Dishes lean in</b></div>
+        <p>Hovering a dish card lifts it 7px, tilts it −0.7°, and snaps a hard black shadow in behind it. The price stamp counter-rotates back to level as it lifts, so the card feels like a physical thing being picked up off the pass.</p>
+        <div class="spec"><span>300ms</span><span>cubic-bezier(.2,.9,.3,1)</span><span>tap = same on mobile</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <rect x="16" y="22" width="76" height="28" rx="14" fill="#F4501B"></rect>
+          <rect x="100" y="22" width="60" height="28" rx="14" fill="none" stroke="rgba(246,239,225,.4)" stroke-width="2.5"></rect>
+          <rect x="168" y="22" width="46" height="28" rx="14" fill="none" stroke="rgba(246,239,225,.4)" stroke-width="2.5"></rect>
+          <path d="M60 60c0 12 44 4 44 14" stroke="#F4501B" stroke-width="2.5" stroke-dasharray="5 6"></path>
+          <g fill="rgba(246,239,225,.45)">
+            <rect x="100" y="78" width="86" height="7" rx="3"></rect>
+            <rect x="100" y="90" width="56" height="7" rx="3"></rect>
+          </g>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">7</span><b>Menu tabs slide, list staggers</b></div>
+        <p>The orange pill physically travels from the old tab to the new one rather than blinking across, and the dish list underneath fades up in a 120ms stagger. On mobile the tab row scrolls horizontally and snaps.</p>
+        <div class="spec"><span>pill 280ms</span><span>list stagger 40ms</span><span>scroll-snap on mobile</span></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="beat-fig">
+        <svg width="230" height="100" viewBox="0 0 230 100" fill="none" aria-hidden="true">
+          <rect x="16" y="34" width="80" height="32" rx="16" fill="none" stroke="#F6EFE1" stroke-width="2.5"></rect>
+          <rect x="16" y="34" width="40" height="32" rx="16" fill="#F6EFE1"></rect>
+          <text x="36" y="55" font-family="Archivo, sans-serif" font-size="13" font-weight="800" fill="#14100D" text-anchor="middle">EN</text>
+          <text x="76" y="55" font-family="'Noto Sans HK', sans-serif" font-size="13" font-weight="700" fill="#F6EFE1" text-anchor="middle">中</text>
+          <g opacity=".35" fill="#F6EFE1">
+            <rect x="128" y="26" width="86" height="8" rx="4"></rect>
+            <rect x="128" y="40" width="60" height="8" rx="4"></rect>
+          </g>
+          <g fill="#F4501B">
+            <rect x="128" y="60" width="86" height="8" rx="4"></rect>
+            <rect x="128" y="74" width="66" height="8" rx="4"></rect>
+          </g>
+          <path d="M120 78V46M120 46l-5 6M120 46l5 6" stroke="#F4501B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="beat-b">
+        <div class="beat-h"><span class="n">8</span><b>Language rolls, never fades</b></div>
+        <p>Hitting 中文 rolls each block of copy upward — English exits up, Chinese enters from below — staggered 20ms down the page so the change reads as a wave. Dish names never swap: both languages stay stacked, exactly like the printed menu.</p>
+        <div class="spec"><span>180ms roll</span><span>20ms per block</span><span>choice remembered</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <h3>Non-negotiables</h3>
+    <ul>
+      <li><b>prefers-reduced-motion</b> kills every loop, wipe and roll. Content appears in place; nothing is lost.</li>
+      <li><b>Transform and opacity only.</b> Nothing animates layout properties, so scrolling stays smooth on an old phone.</li>
+      <li><b>Nothing blocks reading.</b> Every reveal has finished by the time a section is halfway up the screen.</li>
+      <li><b>Touch cuts too.</b> A finger drag slices; the field takes fewer onions on a phone and never swallows a vertical scroll.</li>
+      <li><b>One payoff per page.</b> Beat 4 is the moment — every other section stays quieter than the hero.</li>
+      <li><b>Lazy-load photography</b> below the fold; the hero ships as the face mark plus type, so it paints instantly.</li>
+    </ul>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"$preview": {"width": 1080, "height": 1560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

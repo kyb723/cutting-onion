@@ -1,0 +1,685 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+HK:wght@400;500;700;900&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #F6EFE1; }
+    a { color: #F4501B; text-decoration: none; }
+    a:hover { color: #C93A0F; }
+
+    .m {
+      --orange: #F4501B; --deep: #C93A0F; --ink: #14100D; --ink-70: rgba(20,16,13,.62);
+      --paper: #F6EFE1; --paper-hi: #FCF8EF; --cuke: #8FBF2E;
+      --disp: 'Rammetto One', 'Noto Sans HK', 'Arial Black', sans-serif;
+      --body: 'Archivo', 'Noto Sans HK', system-ui, sans-serif;
+      --han: 'Noto Sans HK', 'PingFang HK', system-ui, sans-serif;
+      width: 390px; background: var(--paper); color: var(--ink); font-family: var(--body);
+      position: relative; overflow: hidden;
+    }
+    .disp { font-family: var(--disp); font-weight: 900; font-synthesis-weight: none; line-height: .9; text-transform: uppercase; }
+    .han { font-family: var(--han); }
+    .lbl { font-weight: 800; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .pad { padding-left: 22px; padding-right: 22px; }
+
+    .m-nav { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 16px; background: var(--paper); border-bottom: 3px solid var(--ink); }
+    .m-disc { width: 38px; height: 38px; border-radius: 50%; background: var(--orange); overflow: hidden; flex: none; }
+    .m-disc img { width: 38px; height: 38px; display: block; }
+    .m-name { font-family: var(--disp); font-size: 14px; line-height: 1; }
+    .m-nav-r { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .sw { display: flex; border: 2.5px solid var(--ink); border-radius: 999px; overflow: hidden; }
+    .sw span { font-weight: 800; font-size: 11px; letter-spacing: .06em; padding: 6px 11px; line-height: 1.3; }
+    .sw span.on { background: var(--ink); color: var(--paper); }
+    .burger { width: 44px; height: 44px; border: 2.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+    .m-hero { padding: 30px 22px 0; }
+    .m-kick { display: flex; align-items: center; gap: 9px; color: var(--deep); }
+    .m-kick i { display: block; width: 26px; height: 3px; background: var(--deep); }
+    .m-hero h1 { margin: 14px 0 0; font-size: 58px; letter-spacing: -.01em; }
+    .m-hero h1 span { display: block; color: var(--orange); -webkit-text-stroke: 2.5px var(--ink); }
+    .m-art { position: relative; width: 300px; height: 300px; margin: 24px auto 0; }
+    .m-art .disc { position: absolute; inset: 0; border-radius: 50%; background: var(--orange); border: 4px solid var(--ink); overflow: hidden; }
+    .m-art .disc img { position: absolute; left: -2px; top: -2px; width: 304px; height: 304px; }
+    .tear { position: absolute; animation: fall 2.9s cubic-bezier(.45,0,.75,.6) infinite; }
+    .tear i { display: block; width: 12px; height: 12px; background: var(--orange); border: 2px solid var(--ink); border-radius: 50% 50% 50% 2px; transform: rotate(-45deg); }
+    @keyframes fall { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translateY(150px); opacity: 0; } }
+    .m-sub { margin: 24px 0 0; font-family: var(--han); font-size: 16px; line-height: 1.75; color: var(--ink-70); }
+    .m-cta { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .btn { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border: 3px solid var(--ink); border-radius: 999px; background: var(--orange); color: var(--paper-hi); font-family: var(--disp); font-size: 15px; text-transform: uppercase; box-shadow: 4px 4px 0 var(--ink); }
+    .btn.ghost { background: transparent; color: var(--ink); }
+
+    .ticker { margin-top: 34px; padding: 13px 0; background: var(--ink); overflow: hidden; }
+    .track { display: flex; gap: 26px; width: max-content; animation: roll 22s linear infinite; }
+    @keyframes roll { to { transform: translateX(-50%); } }
+    .tk { display: flex; align-items: center; gap: 26px; }
+    .tk b { font-family: var(--disp); font-size: 15px; font-weight: 400; color: var(--paper); white-space: nowrap; }
+    .tk b.o { color: var(--orange); }
+
+    .sec { padding: 54px 0; }
+    .sec h2 { margin: 10px 0 0; font-size: 40px; }
+    .sec .zh2 { margin-top: 9px; font-family: var(--han); font-weight: 900; font-size: 17px; color: var(--deep); }
+
+    .story { background: var(--paper-hi); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+    .tf { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 26px 0 30px; }
+    .tf-c { width: 118px; height: 118px; border-radius: 50%; border: 3.5px solid var(--ink); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .tf-c.a { background: var(--paper); }
+    .tf-c.a img { width: 118px; }
+    .tf-c.b { background: var(--ink); }
+    .tf-c.b img { width: 80px; }
+    .story p { margin: 0 0 16px; font-family: var(--han); font-size: 15px; line-height: 1.85; color: var(--ink-70); }
+    .quote { margin-top: 26px; padding: 24px 22px; background: var(--orange); border: 3.5px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+    .quote b { display: block; font-family: var(--han); font-weight: 900; font-size: 25px; line-height: 1.35; color: var(--paper-hi); }
+    .quote span { display: block; margin-top: 7px; font-family: var(--disp); font-size: 11px; color: var(--ink); }
+
+    .cards { display: flex; flex-direction: column; gap: 16px; margin-top: 26px; }
+    .card { position: relative; border: 3px solid var(--ink); background: var(--paper-hi); overflow: hidden; }
+    .card img { width: 100%; height: 190px; object-fit: cover; display: block; background: #F8E9D6; }
+    .card-b { position: relative; padding: 18px 20px 22px; }
+    .card-b .zh { font-family: var(--han); font-weight: 700; font-size: 13px; color: var(--deep); }
+    .card-b h3 { margin: 7px 0 0; font-family: var(--disp); font-size: 20px; line-height: 1.05; padding-right: 70px; text-transform: uppercase; }
+    .card-b p { margin: 9px 0 0; font-size: 13px; line-height: 1.55; color: var(--ink-70); }
+    .price { position: absolute; right: 16px; top: -18px; padding: 8px 13px 7px; background: var(--orange); color: var(--paper-hi); border: 3px solid var(--ink); border-radius: 999px; font-family: var(--disp); font-size: 13px; transform: rotate(-7deg); }
+
+    .menu { background: var(--ink); color: var(--paper); }
+    .tabs { display: flex; gap: 9px; margin: 22px 0 18px; padding: 0 22px 4px; overflow-x: auto; }
+    .tab { flex: none; min-height: 44px; display: flex; align-items: center; gap: 7px; padding: 0 16px; border: 2.5px solid var(--paper); border-radius: 999px; color: var(--paper); white-space: nowrap; }
+    .tab b { font-family: var(--disp); font-weight: 400; font-size: 11px; text-transform: uppercase; }
+    .tab i { font-family: var(--han); font-style: normal; font-weight: 700; font-size: 11px; opacity: .68; }
+    .tab.on { background: var(--orange); border-color: var(--orange); color: var(--paper-hi); }
+    .mcard { margin: 0 22px; padding: 26px 22px 22px; background: var(--paper-hi); color: var(--ink); border: 3.5px solid var(--orange); }
+    .mi { padding: 0 0 18px; }
+    .mi .z { font-family: var(--han); font-weight: 700; font-size: 13px; color: var(--ink-70); line-height: 1.5; }
+    .mi .r { display: flex; align-items: baseline; gap: 7px; margin-top: 3px; }
+    .mi .e { font-family: var(--disp); font-size: 14px; text-transform: uppercase; line-height: 1.2; }
+    .mi .d { flex: 1 1 auto; min-width: 10px; align-self: center; border-bottom: 3px dotted rgba(20,16,13,.3); }
+    .mi .p { font-family: var(--disp); font-size: 14px; color: var(--orange); }
+    .mi .s { margin-top: 4px; font-size: 12px; line-height: 1.5; color: var(--ink-70); }
+    .veg { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: var(--cuke); border: 2px solid var(--ink); font-family: var(--disp); font-size: 8px; color: var(--ink); flex: none; }
+    .mall { display: flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 6px; border-top: 3px solid var(--ink); font-family: var(--disp); font-size: 12px; text-transform: uppercase; }
+
+    .combo { padding: 44px 22px; background: var(--orange); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+    .combo h2 { margin: 10px 0 0; font-size: 34px; }
+    .combo p { margin: 14px 0 0; font-family: var(--han); font-size: 15px; line-height: 1.7; }
+    .combo-guy { display: block; width: 132px; margin: 12px 0 -44px auto; filter: brightness(0); }
+
+    .gal { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 24px; }
+    .gt { border: 3px solid var(--ink); overflow: hidden; background: var(--ink); }
+    .gt img { width: 100%; height: 150px; object-fit: cover; display: block; }
+    .gt.wide { grid-column: span 2; }
+    .gt.wide img { height: 210px; }
+    .gt.o { background: var(--orange); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; height: 150px; }
+    .gt.o img { width: 58px; height: auto; object-fit: contain; filter: brightness(0); }
+    .gt.o b { font-family: var(--disp); font-size: 15px; line-height: 1.05; text-align: center; color: var(--ink); }
+
+    .visit { background: var(--paper-hi); border-top: 4px solid var(--ink); }
+    .vcard { margin-top: 24px; border: 3.5px solid var(--ink); background: var(--paper); }
+    .vrow { padding: 18px 20px; border-bottom: 3px solid var(--ink); }
+    .vrow:last-child { border-bottom: 0; }
+    .vrow .k { color: var(--deep); }
+    .vrow .v { margin-top: 6px; font-family: var(--han); font-weight: 700; font-size: 17px; line-height: 1.4; }
+
+    .foot { padding: 40px 22px 30px; background: var(--ink); color: var(--paper); overflow: hidden; }
+    .foot-word { margin: 26px 0 20px; font-family: var(--disp); font-size: 44px; line-height: .9; text-align: center; text-transform: uppercase; color: transparent; -webkit-text-stroke: 2.5px rgba(246,239,225,.42); }
+    .foot-bar { font-family: var(--han); font-size: 12px; line-height: 1.7; color: rgba(246,239,225,.62); text-align: center; }
+
+    @media (prefers-reduced-motion: reduce) { .track, .tear { animation: none !important; } }
+
+    /* ---- onion field ---- */
+    .ofield { position: relative; height: 620px; overflow: hidden; background: var(--f-bg); color: var(--f-fg); touch-action: pan-y; }
+    .ofield[data-theme="dark"]  { --f-bg: #0E0B09; --f-fg: #F6EFE1; --f-dim: rgba(246,239,225,.62); --f-hair: rgba(246,239,225,.2); }
+    .ofield[data-theme="paper"] { --f-bg: #F6EFE1; --f-fg: #14100D; --f-dim: rgba(20,16,13,.62); --f-hair: rgba(20,16,13,.2); }
+    .ofield .centre { position: absolute; left: 50%; top: 38%; transform: translate(-50%,-50%); z-index: 1; }
+    #onionfield { position: absolute; inset: 0; z-index: 2; display: block; pointer-events: none; }
+    .ofield .ui { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+    .ofield .ui a { pointer-events: auto; }
+    .ofield .ig { display: block; width: 232px; height: 232px; border-radius: 50%; background: var(--orange); overflow: hidden; }
+    .ofield .ig img { display: block; width: 236px; height: 236px; margin: -2px 0 0 -2px; }
+    .ocopy { position: absolute; left: 22px; right: 22px; bottom: 26px; }
+    .ocopy::before { content: ""; position: absolute; left: -30px; right: -30px; top: -70px; bottom: -40px; z-index: -1; background: radial-gradient(70% 66% at 40% 62%, var(--f-bg) 0%, transparent 76%); }
+    .ocopy .kick { display: flex; align-items: center; gap: 8px; color: var(--orange); }
+    .ocopy .kick i { display: block; width: 22px; height: 3px; background: var(--orange); }
+    .ocopy h1 { margin: 12px 0 0; font-family: var(--han); font-weight: 900; font-size: 60px; line-height: .95; letter-spacing: .02em; }
+    .ocopy .en { margin-top: 5px; font-family: var(--disp); font-size: 15px; color: var(--orange); }
+    .ocopy p { margin: 14px 0 0; font-family: var(--han); font-size: 14px; line-height: 1.8; color: var(--f-dim); }
+    .ofield .m-cta { margin-top: 18px; }
+    .ofield .btn { border-color: var(--f-fg); box-shadow: 4px 4px 0 var(--f-fg); }
+    .ofield .btn.ghost { background: transparent; color: var(--f-fg); }
+    .ohint { position: absolute; left: 22px; top: 88px; display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 2px solid var(--f-hair); border-radius: 999px; font-family: var(--han); font-weight: 900; font-size: 12px; transition: opacity .5s ease; }
+    .ohint .cnt { font-family: var(--disp); font-size: 11px; color: var(--orange); }
+  </style>
+</helmet>
+
+<div class="m">
+
+  <div class="m-nav">
+    <span class="m-disc"><img src="logo-face.png" alt="Cutting Onions"></span>
+    <span class="m-name">Cutting<br>Onions</span>
+    <div class="m-nav-r">
+      <div class="sw"><span>EN</span><span class="on han">中文</span></div>
+      <span class="burger">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" stroke="#14100D" stroke-width="2.6" stroke-linecap="round"></path></svg>
+      </span>
+    </div>
+  </div>
+
+  <div class="ofield" id="hero" data-theme="dark">
+    <div class="centre" id="centre">
+      <span class="ig"><img src="logo-face.png" alt="Cutting Onions"></span>
+    </div>
+    <canvas id="onionfield"></canvas>
+    <div class="ui">
+      <div class="ohint" id="hint">
+        <svg width="17" height="17" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M3 4v13l4-4 3 6 3-1.4-3-6h6L3 4Z" fill="currentColor"></path></svg>
+        <span>拖曳，切啲洋蔥</span>
+        <span class="cnt" id="cnt">Cut 0</span>
+      </div>
+      <div class="ocopy">
+        <div class="kick lbl han"><i></i>香港 · [地區] · [年份] 開業</div>
+        <h1 class="han">唔好喊</h1>
+        <div class="en disp">Please don’t cry</div>
+        <p class="han">切洋蔥係廚房裡面唯一可以喊得理直氣壯嘅理由。我哋就用成間鋪頭，日日去證明佢錯。</p>
+        <div class="m-cta">
+          <a href="#" class="btn han">睇餐牌</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="track">
+      <div class="tk"><b>Please don’t cry</b><b class="o han">唔好喊</b><b>Deep fried everythong!</b><b class="o han">曳野！</b></div>
+      <div class="tk"><b>Please don’t cry</b><b class="o han">唔好喊</b><b>Deep fried everythong!</b><b class="o han">曳野！</b></div>
+    </div>
+  </div>
+
+  <div class="sec story pad">
+    <div class="lbl han" style="color: var(--deep);">點解叫呢個名</div>
+    <h2 class="disp han">一樣流眼淚<br>完全唔同原因</h2>
+    <div class="tf">
+      <span class="tf-c a"><img src="logo-face.png" alt=""></span>
+      <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden="true"><path d="M2 10h24M19 3l7 7-7 7" stroke="#14100D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span class="tf-c b"><img src="mark-onion.png" alt=""></span>
+    </div>
+    <p>老闆娘想要一個冇人會唔記得嘅名，所以揀咗全世界都有反應嗰樣嘢。之後就日日開鋪去證明佢錯。</p>
+    <p>曳晒嘅炸物、要兩隻手先揸得住嘅包、加咗鯷魚蛋黃醬嘅漢堡，同埋隻杯上面寫住 PLEASE DON’T CRY 嘅青青飲品。</p>
+    <div class="quote">
+      <b class="han">你快樂所以我快樂 :)</b>
+      <span class="disp">Printed on every menu</span>
+    </div>
+  </div>
+
+  <div class="sec pad">
+    <div class="lbl han" style="color: var(--deep);">唔知食咩就叫呢啲</div>
+    <h2 class="disp han">最容易令你喊嘅嘢</h2>
+    <div class="zh2">開心嗰種眼淚</div>
+    <div class="cards">
+      <div class="card">
+        <img src="model-burger.jpg" alt="" style="height: 236px;">
+        <div class="card-b">
+          <span class="price">$138</span>
+          <div class="zh">招牌!!! 手打牛肉漢堡</div>
+          <h3>House Cheese Burger</h3>
+          <p>Gouda cheese · anchovy mayo · pickled onion rings</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="model-onion-rings.jpg" alt="" style="height: 205px;">
+        <div class="card-b">
+          <span class="price">$56</span>
+          <div class="zh">炸酸洋蔥圈</div>
+          <h3>Pickled Onion Ring</h3>
+          <p>Tartar。招牌吉祥物，落咗油鑊。</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="model-drink.jpg" alt="" style="height: 225px;">
+        <div class="card-b">
+          <span class="price">$45</span>
+          <div class="zh">杯上面寫住</div>
+          <h3>Please Don’t Cry</h3>
+          <p>青瓜片、細細個骷髏頭飲管針。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec menu">
+    <div class="pad">
+      <div class="lbl han" style="color: var(--orange);">其餘全部</div>
+      <h2 class="disp han">全部餐牌</h2>
+    </div>
+    <div class="tabs">
+      <span class="tab on"><b>Small Plate</b><i>前菜</i></span>
+      <span class="tab"><b>Deep Fried</b><i>曳野</i></span>
+      <span class="tab"><b>Bao</b><i>包</i></span>
+      <span class="tab"><b>Pasta</b><i>意粉</i></span>
+    </div>
+    <div class="mcard">
+      <div class="mi">
+        <div class="z">墨西哥牛油果醬配炸餃子皮</div>
+        <div class="r"><span class="e">Guacamole w/ Chips</span><span class="veg">V</span><span class="d"></span><span class="p">$66</span></div>
+        <div class="s">tomato / pickled onion</div>
+      </div>
+      <div class="mi">
+        <div class="z">蒜香辣炒本地菜（多謝支持本地農場）</div>
+        <div class="r"><span class="e">Stir Fried Veg</span><span class="veg">V</span><span class="d"></span><span class="p">$66</span></div>
+        <div class="s">confit garlic / almond flakes / chili flakes</div>
+      </div>
+      <div class="mi">
+        <div class="z">李派林香草牛油燒大蝦（兩隻）</div>
+        <div class="r"><span class="e">Grilled Tiger Prawns</span><span class="d"></span><span class="p">$78</span></div>
+        <div class="s">worcestershire herb butter</div>
+      </div>
+      <div class="mi">
+        <div class="z">花生醬青瓜苦瓜哈蜜瓜沙律</div>
+        <div class="r"><span class="e">Cucumber &amp; Melon Salad</span><span class="veg">V</span><span class="d"></span><span class="p">$56</span></div>
+        <div class="s">peanut butter dressing / cashew nuts</div>
+      </div>
+      <div class="mall">See all 9 dishes 睇晒全部</div>
+    </div>
+  </div>
+
+  <div class="combo">
+    <div class="lbl han">咳停一人餐 Combo</div>
+    <h2 class="disp han">加一款小食<br>就送你一杯野飲</h2>
+    <p>揀包或意粉或主食，加購任何一款小食，就送你一杯 $45 嘅野飲。啤酒跟餐加 $30。</p>
+    <img class="combo-guy" src="mark-burgerguy.png" alt="">
+  </div>
+
+  <div class="sec pad">
+    <div class="lbl han" style="color: var(--deep);">證據</div>
+    <h2 class="disp han">喊得好開心嘅現場</h2>
+    <div class="gal">
+      <div class="gt wide"><img src="sign-night.jpg" alt=""></div>
+      <div class="gt"><img src="dish-beer.jpg" alt=""></div>
+      <div class="gt o"><img src="mark-onion.png" alt=""><b>Please<br>Don't Cry</b></div>
+      <div class="gt"><img src="dish-crab-bao.jpg" alt=""></div>
+      <div class="gt"><img src="dish-french-toast.jpg" alt=""></div>
+    </div>
+  </div>
+
+  <div class="sec visit pad">
+    <div class="lbl han" style="color: var(--deep);">搵我哋</div>
+    <h2 class="disp han">嚟一齊喊啦</h2>
+    <div class="vcard">
+      <div class="vrow"><div class="k lbl han">地址</div><div class="v">[舖號／街道]，[地區]，香港</div></div>
+      <div class="vrow"><div class="k lbl han">營業時間</div><div class="v">午市 [12:00–15:00]<br>晚市 [18:00–23:00]</div></div>
+      <div class="vrow"><div class="k lbl han">電話</div><div class="v">[+852 0000 0000]</div></div>
+    </div>
+    <div class="m-cta" style="margin-top: 20px;"><a href="#" class="btn han">訂枱</a></div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-word">Cutting Onîons</div>
+    <div class="foot-bar">免收加一 · 歡迎打賞<br>你快樂所以我快樂 :)<br>© 2026 Cutting Onions</div>
+  </div>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{
+  "density": {"editor": "range", "default": 30, "min": 14, "max": 60, "step": 2, "section": "Hero"},
+  "$preview": {"width": 390, "height": 5200}
+}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+
+  componentDidMount() {
+    this._tries = 0;
+    this._tick = this._tick.bind(this);
+    this._boot = this._boot.bind(this);
+    this._boot();
+  }
+
+  componentDidUpdate() {
+    if (this._cv) { this._palette(); this._seed(); }
+  }
+
+  componentWillUnmount() {
+    this._dead = true;
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._to) clearTimeout(this._to);
+    if (this._hero && this._onMove) {
+      this._hero.removeEventListener('pointermove', this._onMove);
+      this._hero.removeEventListener('pointerleave', this._onLeave);
+    }
+  }
+
+  /* ---------- boot ---------- */
+
+  _boot() {
+    if (this._dead) return;
+    var cv = document.getElementById('onionfield');
+    var hero = document.getElementById('hero');
+    if (!cv || !hero || !hero.clientWidth) {
+      if (this._tries++ < 80) this._to = setTimeout(this._boot, 90);
+      return;
+    }
+    this._cv = cv; this._hero = hero; this._ctx = cv.getContext('2d');
+    this._centre = document.getElementById('centre');
+    this._cnt = document.getElementById('cnt');
+    this._hint = document.getElementById('hint');
+    this._cuts = 0; this._revealed = false;
+    this._px = -999; this._py = -999; this._lx = -999; this._ly = -999;
+    this._trail = [];
+
+    this._palette();
+    this._resize();
+    this._seed();
+
+    var self = this;
+    this._onMove = function (e) {
+      var r = self._cv.getBoundingClientRect();
+      self._px = e.clientX - r.left;
+      self._py = e.clientY - r.top;
+      self._moved = true;
+    };
+    this._onLeave = function () { self._px = -999; self._py = -999; self._lx = -999; self._ly = -999; };
+    hero.addEventListener('pointermove', this._onMove);
+    hero.addEventListener('pointerleave', this._onLeave);
+
+    var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    this._reduced = !!(rm && rm.matches);
+    if (this._reduced) { for (var i = 0; i < 200; i++) this._step(); this._paint(); }
+    else this._raf = requestAnimationFrame(this._tick);
+  }
+
+  _palette() {
+    this._line = '#0E0B09';
+    this._skins = [
+      { fill: '#F4501B', vein: 'rgba(14,11,9,.5)',  ring: '#FCF8EF' },
+      { fill: '#F4501B', vein: 'rgba(14,11,9,.5)',  ring: '#FCF8EF' },
+      { fill: '#F6EFE1', vein: 'rgba(14,11,9,.34)', ring: '#F4501B' },
+      { fill: '#C93A0F', vein: 'rgba(14,11,9,.5)',  ring: '#FCF8EF' }
+    ];
+  }
+
+  _resize() {
+    var cv = this._cv;
+    var w = this._hero.clientWidth, h = this._hero.clientHeight;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    cv.style.width = w + 'px'; cv.style.height = h + 'px';
+    this._ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    this.W = w; this.H = h; this.CX = w / 2; this.CY = h * 0.47;
+  }
+
+  _seed() {
+    var n = Math.round(this.props.density || 74);
+    this.onions = []; this.halves = []; this.tears = [];
+    for (var i = 0; i < n; i++) this.onions.push(this._make(true));
+  }
+
+  _make(initial) {
+    var a = Math.random() * Math.PI * 2;
+    var d = initial ? Math.pow(Math.random(), 0.62) * 330 : 520 + Math.random() * 180;
+    var r = 22 + Math.pow(Math.random(), 1.7) * 46;
+    var s = this._skins[Math.floor(Math.random() * this._skins.length)];
+    return {
+      x: this.CX + Math.cos(a) * d * 1.45,
+      y: this.CY + Math.sin(a) * d,
+      vx: 0, vy: 0, r: r,
+      rot: (Math.random() - 0.5) * 0.9,
+      spin: (Math.random() - 0.5) * 0.012,
+      fill: s.fill, vein: s.vein, ring: s.ring
+    };
+  }
+
+  /* ---------- simulation ---------- */
+
+  _step() {
+    var O = this.onions, i, j, o;
+
+    for (i = 0; i < O.length; i++) {
+      o = O[i];
+      var dx = this.CX - o.x, dy = this.CY - o.y;
+      var d = Math.sqrt(dx * dx + dy * dy) || 1;
+      var pull = d > 300 ? 0.14 : 0.05;
+      o.vx += (dx / d) * pull; o.vy += (dy / d) * pull;
+
+      if (this._px > -900) {
+        var px = o.x - this._px, py = o.y - this._py;
+        var pd = Math.sqrt(px * px + py * py) || 1;
+        if (pd < 150) {
+          var f = (1 - pd / 150) * 2.4;
+          o.vx += (px / pd) * f; o.vy += (py / pd) * f;
+        }
+      }
+      o.vx *= 0.93; o.vy *= 0.93;
+      o.x += o.vx; o.y += o.vy; o.rot += o.spin;
+    }
+
+    for (i = 0; i < O.length; i++) {
+      for (j = i + 1; j < O.length; j++) {
+        var a = O[i], b = O[j];
+        var ux = b.x - a.x, uy = b.y - a.y;
+        var ud = Math.sqrt(ux * ux + uy * uy) || 1;
+        var min = (a.r + b.r) * 0.94;
+        if (ud < min) {
+          var push = (min - ud) / ud * 0.34;
+          var mx = ux * push, my = uy * push;
+          a.x -= mx; a.y -= my; b.x += mx; b.y += my;
+          a.rot -= 0.004; b.rot += 0.004;
+        }
+      }
+    }
+
+    for (i = this.halves.length - 1; i >= 0; i--) {
+      var hf = this.halves[i];
+      hf.vy += 0.34; hf.vx *= 0.995; hf.x += hf.vx; hf.y += hf.vy;
+      hf.rot += hf.spin; hf.life -= 1;
+      if (hf.life <= 0 || hf.y - hf.r > this.H + 80) this.halves.splice(i, 1);
+    }
+    for (i = this.tears.length - 1; i >= 0; i--) {
+      var t = this.tears[i];
+      t.vy += 0.42; t.x += t.vx; t.y += t.vy; t.life -= 1;
+      if (t.life <= 0 || t.y > this.H + 40) this.tears.splice(i, 1);
+    }
+
+    if (O.length < Math.round(this.props.density || 74) && Math.random() < 0.028) O.push(this._make(false));
+  }
+
+  _slice() {
+    var qx = this._px, qy = this._py;
+    if (this._lx < -900) { this._lx = qx; this._ly = qy; return; }
+    var px = this._lx, py = this._ly;
+    this._lx = qx; this._ly = qy;
+
+    var bx = qx - px, by = qy - py;
+    var len = Math.sqrt(bx * bx + by * by);
+    if (len < 7) return;
+
+    this._trail.push({ x: qx, y: qy, life: 16 });
+    var ux = bx / len, uy = by / len;
+    var rot = Math.atan2(-ux, uy);
+    var nx = Math.cos(rot), ny = Math.sin(rot);
+
+    for (var i = this.onions.length - 1; i >= 0; i--) {
+      var o = this.onions[i];
+      var t = ((o.x - px) * bx + (o.y - py) * by) / (len * len);
+      t = t < 0 ? 0 : (t > 1 ? 1 : t);
+      var cx = px + bx * t, cy = py + by * t;
+      var ddx = o.x - cx, ddy = o.y - cy;
+      if (Math.sqrt(ddx * ddx + ddy * ddy) > o.r * 0.86) continue;
+
+      this.onions.splice(i, 1);
+      for (var s = -1; s <= 1; s += 2) {
+        this.halves.push({
+          x: o.x + nx * o.r * 0.2 * s, y: o.y + ny * o.r * 0.2 * s,
+          vx: o.vx * 0.4 + nx * s * 4.2 + ux * 1.6,
+          vy: o.vy * 0.4 + ny * s * 4.2 + uy * 1.6 - 1.6,
+          r: o.r, rot: rot, side: s, spin: s * (0.03 + Math.random() * 0.03),
+          life: 150, fill: o.fill, ring: o.ring, vein: o.vein
+        });
+      }
+      var nt = 1 + Math.floor(Math.random() * 2);
+      for (var k = 0; k < nt; k++) {
+        this.tears.push({
+          x: o.x, y: o.y, vx: (Math.random() - 0.5) * 2.6, vy: -2 - Math.random() * 2,
+          r: 5 + Math.random() * 4, life: 90
+        });
+      }
+      this._cuts++;
+    }
+
+    if (this._cuts > 0 && this._hint && !this._hint._faded) {
+      this._hint._faded = true; this._hint.style.opacity = '.45';
+    }
+    if (this._cnt) this._cnt.textContent = 'Cut ' + this._cuts;
+    if (!this._revealed && this._cuts >= 14) {
+      this._revealed = true;
+      if (this._hint) {
+        this._hint.style.opacity = '1';
+        this._hint.innerHTML = '<div class="row"><b class="han">而家好啲未？</b></div>'
+          + '<div class="en2">Feeling better?</div>'
+          + '<div class="cnt disp">Cut ' + this._cuts + '</div>';
+      }
+    }
+  }
+
+  /* ---------- drawing ---------- */
+
+  _lens(ctx, cx, cy, rx, ry, rot) {
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot);
+    ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+
+  _onion(ctx, o) {
+    var r = o.r, i;
+    ctx.save();
+    ctx.translate(o.x, o.y); ctx.rotate(o.rot);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+
+    /* round body, no legs */
+    ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2);
+    ctx.fillStyle = o.fill; ctx.fill();
+    ctx.lineWidth = Math.max(2.4, r * 0.07); ctx.strokeStyle = this._line; ctx.stroke();
+
+    /* grain lines */
+    ctx.strokeStyle = o.vein; ctx.lineWidth = Math.max(1.3, r * 0.045);
+    var gx = [-0.62, -0.30, 0.30, 0.62];
+    for (i = 0; i < gx.length; i++) {
+      ctx.beginPath();
+      ctx.moveTo(gx[i] * r * 0.30, -r * 0.90);
+      ctx.quadraticCurveTo(gx[i] * r * 1.16, -r * 0.06, gx[i] * r * 0.90, r * 0.44);
+      ctx.stroke();
+    }
+
+    /* knotted sprout */
+    ctx.strokeStyle = this._line; ctx.lineWidth = Math.max(2, r * 0.058);
+    ctx.beginPath();
+    ctx.moveTo(-r * 0.20, -r * 0.97);
+    ctx.quadraticCurveTo(-r * 0.34, -r * 1.36, -r * 0.02, -r * 1.18);
+    ctx.quadraticCurveTo(r * 0.30, -r * 1.42, r * 0.22, -r * 1.00);
+    ctx.stroke();
+
+    /* sunglasses */
+    ctx.fillStyle = this._line;
+    this._lens(ctx, -r * 0.40, -r * 0.05, r * 0.36, r * 0.27, -0.13);
+    this._lens(ctx,  r * 0.40, -r * 0.05, r * 0.36, r * 0.27,  0.13);
+    ctx.beginPath(); ctx.rect(-r * 0.10, -r * 0.15, r * 0.20, r * 0.13); ctx.fill();
+
+    /* arms and knife, only where there is room for them to read */
+    if (r > 40) {
+      ctx.strokeStyle = this._line; ctx.lineWidth = Math.max(2, r * 0.05);
+      ctx.beginPath();
+      ctx.moveTo(r * 0.90, r * 0.24);
+      ctx.quadraticCurveTo(r * 1.16, r * 0.18, r * 1.22, r * 0.00);
+      ctx.stroke();
+      ctx.beginPath(); ctx.arc(r * 1.24, -r * 0.04, r * 0.06, 0, Math.PI * 2); ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(-r * 0.90, r * 0.24);
+      ctx.quadraticCurveTo(-r * 1.14, r * 0.16, -r * 1.20, -r * 0.06);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(-r * 1.28, -r * 0.18);
+      ctx.lineTo(-r * 1.13, -r * 0.24);
+      ctx.lineTo(-r * 1.19, -r * 0.72);
+      ctx.closePath(); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  _half(ctx, h) {
+    ctx.save();
+    ctx.globalAlpha = Math.min(1, h.life / 42);
+    ctx.translate(h.x, h.y); ctx.rotate(h.rot); ctx.scale(h.side, 1);
+
+    ctx.beginPath();
+    ctx.arc(0, 0, h.r, -Math.PI / 2, Math.PI / 2);
+    ctx.closePath();
+    ctx.fillStyle = h.fill; ctx.fill();
+    ctx.lineWidth = Math.max(2.4, h.r * 0.07); ctx.strokeStyle = this._line; ctx.stroke();
+
+    ctx.strokeStyle = h.ring; ctx.lineWidth = Math.max(1.8, h.r * 0.055);
+    for (var k = 1; k <= 3; k++) {
+      var rr = h.r * (0.24 * k + 0.05);
+      ctx.beginPath();
+      ctx.ellipse(0, 0, rr * 0.9, rr, 0, -Math.PI / 2, Math.PI / 2);
+      ctx.stroke();
+    }
+    ctx.beginPath(); ctx.ellipse(0, 0, h.r * 0.09, h.r * 0.12, 0, -Math.PI / 2, Math.PI / 2);
+    ctx.fillStyle = h.ring; ctx.fill();
+    ctx.restore();
+  }
+
+  _tear(ctx, t) {
+    ctx.save();
+    ctx.globalAlpha = Math.min(1, t.life / 32);
+    ctx.translate(t.x, t.y); ctx.rotate(Math.PI * 0.25);
+    ctx.beginPath();
+    ctx.moveTo(0, -t.r);
+    ctx.bezierCurveTo(t.r, -t.r * 0.2, t.r * 0.78, t.r, 0, t.r);
+    ctx.bezierCurveTo(-t.r * 0.78, t.r, -t.r, -t.r * 0.2, 0, -t.r);
+    ctx.fillStyle = '#F4501B'; ctx.fill();
+    ctx.lineWidth = 2; ctx.strokeStyle = this._line; ctx.stroke();
+    ctx.restore();
+  }
+
+  _paint() {
+    var ctx = this._ctx, i;
+    ctx.clearRect(0, 0, this.W, this.H);
+
+    for (i = this._trail.length - 1; i >= 0; i--) {
+      this._trail[i].life -= 1;
+      if (this._trail[i].life <= 0) this._trail.splice(i, 1);
+    }
+    if (this._trail.length > 1) {
+      ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      for (i = 1; i < this._trail.length; i++) {
+        var p = this._trail[i - 1], q = this._trail[i];
+        ctx.globalAlpha = Math.min(1, q.life / 16) * 0.85;
+        ctx.strokeStyle = '#F4501B';
+        ctx.lineWidth = 2 + (q.life / 16) * 5;
+        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    for (i = 0; i < this.halves.length; i++) this._half(ctx, this.halves[i]);
+    for (i = 0; i < this.onions.length; i++) this._onion(ctx, this.onions[i]);
+    for (i = 0; i < this.tears.length; i++) this._tear(ctx, this.tears[i]);
+  }
+
+  _tick() {
+    if (this._dead) return;
+    if (this._hero.clientWidth !== this.W || this._hero.clientHeight !== this.H) this._resize();
+    if (this._moved) { this._slice(); this._moved = false; }
+    this._step();
+    this._paint();
+    this._raf = requestAnimationFrame(this._tick);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+node_modules/
+.venv/
+
+# seeded design-canvas build artifact (~3MB, regenerated from design/*.dc.html)
+design/cutting-onions-website.html
+
+# third-party template screen recording — kept locally, not published
+assets/Hero section reference.mov

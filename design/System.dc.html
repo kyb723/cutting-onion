@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+HK:wght@400;500;700;900&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #F6EFE1; }
+    a { color: #F4501B; } a:hover { color: #C93A0F; }
+    .s {
+      --orange: #F4501B; --deep: #C93A0F; --ink: #14100D; --ink-70: rgba(20,16,13,.62);
+      --paper: #F6EFE1; --paper-hi: #FCF8EF; --cuke: #8FBF2E;
+      --disp: 'Rammetto One', 'Arial Black', sans-serif;
+      --body: 'Archivo', 'Noto Sans HK', system-ui, sans-serif;
+      --han: 'Noto Sans HK', 'PingFang HK', system-ui, sans-serif;
+      width: 1080px; padding: 56px; background: var(--paper); color: var(--ink); font-family: var(--body);
+    }
+    .disp { font-family: var(--disp); font-weight: 400; text-transform: uppercase; line-height: .95; }
+    .han { font-family: var(--han); }
+    .lbl { font-weight: 800; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--deep); }
+    h1 { margin: 10px 0 0; font-family: var(--disp); font-size: 46px; text-transform: uppercase; line-height: .95; }
+    .lede { margin: 14px 0 0; max-width: 640px; font-size: 15px; line-height: 1.65; color: var(--ink-70); }
+    .hr { height: 4px; background: var(--ink); margin: 40px 0 34px; }
+    h2 { margin: 0 0 20px; font-family: var(--disp); font-size: 19px; text-transform: uppercase; }
+    .blocks { display: flex; flex-direction: column; gap: 38px; }
+
+    .marks { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .mark { border: 3px solid var(--ink); background: var(--paper-hi); overflow: hidden; }
+    .mark-top { height: 180px; display: flex; align-items: center; justify-content: center; }
+    .mark-top.o { background: var(--orange); }
+    .mark-top.k { background: var(--ink); }
+    .mark-top img { max-height: 148px; max-width: 160px; }
+    .mark-b { padding: 16px 18px 18px; border-top: 3px solid var(--ink); }
+    .mark-b b { display: block; font-family: var(--disp); font-size: 13px; text-transform: uppercase; }
+    .mark-b span { display: block; margin-top: 7px; font-size: 12.5px; line-height: 1.55; color: var(--ink-70); }
+
+    .pal { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; }
+    .sw { border: 3px solid var(--ink); overflow: hidden; }
+    .sw .chip { height: 96px; }
+    .sw .meta { padding: 12px 14px 14px; background: var(--paper-hi); border-top: 3px solid var(--ink); }
+    .sw .meta b { display: block; font-family: var(--disp); font-size: 11px; text-transform: uppercase; }
+    .sw .meta code { display: block; margin-top: 5px; font-family: var(--body); font-weight: 700; font-size: 12px; color: var(--ink-70); letter-spacing: .04em; }
+
+    .type { display: grid; grid-template-columns: 190px 1fr; gap: 16px 28px; align-items: baseline; }
+    .type .k { font-weight: 800; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-70); padding-top: 6px; }
+    .t1 { font-family: var(--disp); font-size: 54px; text-transform: uppercase; line-height: .92; }
+    .t2 { font-family: var(--disp); font-size: 28px; text-transform: uppercase; }
+    .t3 { font-family: var(--han); font-weight: 900; font-size: 24px; color: var(--deep); }
+    .t4 { font-size: 17px; line-height: 1.6; color: var(--ink); max-width: 620px; }
+    .t5 { font-family: var(--han); font-size: 15px; line-height: 1.85; color: var(--ink-70); max-width: 620px; }
+    .note { margin-top: 12px; font-size: 12.5px; line-height: 1.6; color: var(--ink-70); }
+
+    .comps { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border: 3px solid var(--ink); border-radius: 999px; background: var(--orange); color: var(--paper-hi); font-family: var(--disp); font-size: 14px; text-transform: uppercase; box-shadow: 4px 4px 0 var(--ink); }
+    .btn.ghost { background: transparent; color: var(--ink); }
+    .price { display: inline-flex; padding: 9px 14px 8px; background: var(--orange); color: var(--paper-hi); border: 3px solid var(--ink); border-radius: 999px; font-family: var(--disp); font-size: 15px; transform: rotate(-7deg); }
+    .veg { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--cuke); border: 2.5px solid var(--ink); font-family: var(--disp); font-size: 11px; }
+    .tab { display: inline-flex; align-items: baseline; gap: 9px; padding: 12px 20px; border: 3px solid var(--ink); border-radius: 999px; }
+    .tab.on { background: var(--orange); border-color: var(--orange); color: var(--paper-hi); }
+    .tab b { font-family: var(--disp); font-weight: 400; font-size: 13px; text-transform: uppercase; }
+    .tab i { font-family: var(--han); font-style: normal; font-weight: 700; font-size: 12px; opacity: .72; }
+    .stamp { display: inline-block; padding: 14px 18px; border: 3px solid var(--orange); color: var(--orange); text-align: center; transform: rotate(-2.5deg); }
+    .stamp b { display: block; font-family: var(--disp); font-size: 13px; text-transform: uppercase; }
+    .stamp span { display: block; margin-top: 6px; font-family: var(--han); font-weight: 700; font-size: 12px; color: var(--ink); }
+    .langsw { display: inline-flex; border: 2.5px solid var(--ink); border-radius: 999px; overflow: hidden; }
+    .langsw span { font-weight: 800; font-size: 12px; padding: 8px 15px; }
+    .langsw span.on { background: var(--ink); color: var(--paper); }
+
+    .rules { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 30px; }
+    .rule { display: flex; gap: 12px; font-size: 13.5px; line-height: 1.6; }
+    .rule .n { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--paper); font-family: var(--disp); font-size: 11px; display: flex; align-items: center; justify-content: center; }
+    .rule b { font-weight: 800; }
+  </style>
+</helmet>
+
+<div class="s">
+  <div class="lbl">Cutting Onions · Web design system</div>
+  <h1>The kit</h1>
+  <p class="lede">Everything on the site is built from the printed menu and the shopfront sign: fat display caps, 3–4px black rules, hard offset shadows, flat colour. No gradients, no soft drop shadows, no rounded-card blandness.</p>
+
+  <div class="hr"></div>
+
+  <div class="blocks">
+    <div>
+      <h2>Marks</h2>
+      <div class="marks">
+        <div class="mark">
+          <div class="mark-top o"><img src="logo-face.png" alt="Crying face mark"></div>
+          <div class="mark-b">
+            <b>The crying face</b>
+            <span>Primary. Black line art. On orange it is the avatar; on cream it is the sign. Never recoloured, never cropped past the disc.</span>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="mark-top k"><img src="mark-onion.png" alt="Onion in sunglasses"></div>
+          <div class="mark-b">
+            <b>Please don’t cry</b>
+            <span>The onion in sunglasses with the knife. The hero is built out of it: every onion in the field is this character, round, legless, wordless.</span>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="mark-top" style="background: var(--paper);"><img src="mark-burgerguy.png" alt="Burger guy"></div>
+          <div class="mark-b">
+            <b>The burger guy</b>
+            <span>Combo and offer moments only. Solid orange on cream, solid black on orange.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Palette</h2>
+      <div class="pal">
+        <div class="sw"><div class="chip" style="background: #F4501B;"></div><div class="meta"><b>Onion orange</b><code>#F4501B</code></div></div>
+        <div class="sw"><div class="chip" style="background: #C93A0F;"></div><div class="meta"><b>Deep / labels</b><code>#C93A0F</code></div></div>
+        <div class="sw"><div class="chip" style="background: #14100D;"></div><div class="meta"><b>Ink</b><code>#14100D</code></div></div>
+        <div class="sw"><div class="chip" style="background: #F6EFE1;"></div><div class="meta"><b>Menu paper</b><code>#F6EFE1</code></div></div>
+        <div class="sw"><div class="chip" style="background: #8FBF2E;"></div><div class="meta"><b>Cucumber (V)</b><code>#8FBF2E</code></div></div>
+      </div>
+      <p class="note">Orange and ink do the work. Cucumber green is reserved for vegan tags and the green drink — it never becomes a general accent.</p>
+    </div>
+
+    <div>
+      <h2>Typography</h2>
+      <div class="type">
+        <div class="k">Display · Rammetto One</div>
+        <div><div class="t1">Cutting Onîons</div><div class="note">Stand-in for the hand-drawn sign lettering. If [her name] has the original wordmark file, that replaces this at the hero and footer.</div></div>
+        <div class="k">Section heads</div>
+        <div class="t2">Most likely to make you cry</div>
+        <div class="k">Chinese display · Noto Sans HK 900</div>
+        <div class="t3">最容易令你喊嘅嘢</div>
+        <div class="k">Body · Archivo</div>
+        <div class="t4">Gouda cheese, anchovy mayo, pickled onion rings. Build your own — add-ons $10 each.</div>
+        <div class="k">Chinese body · Noto Sans HK</div>
+        <div class="t5">老闆娘想要一個冇人會唔記得嘅名，所以揀咗全世界都有反應嗰樣嘢。</div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Components</h2>
+      <div class="comps">
+        <span class="btn">Book a table</span>
+        <span class="btn ghost">See the menu</span>
+        <span class="price">$138</span>
+        <span class="veg">V</span>
+        <span class="tab on"><b>Small Plate</b><i>前菜</i></span>
+        <span class="tab"><b>Pasta</b><i>意粉</i></span>
+        <span class="langsw"><span class="on">EN</span><span class="han">中文</span></span>
+        <span class="stamp"><b>Bao cutting service unavailable</b><span>唔好意思 不設切包服務</span></span>
+      </div>
+    </div>
+
+    <div>
+      <h2>House rules</h2>
+      <div class="rules">
+        <div class="rule"><span class="n">1</span><span><b>Every box has a 3–4px black border.</b> Depth comes from hard offset shadows, never blur.</span></div>
+        <div class="rule"><span class="n">2</span><span><b>Chinese sits above English</b> on dish names, matching the printed menu. Narrative copy swaps with the toggle.</span></div>
+        <div class="rule"><span class="n">3</span><span><b>Prices are stamps,</b> always rotated −7°, always orange on ink outline.</span></div>
+        <div class="rule"><span class="n">4</span><span><b>Two kinds of picture.</b> Dishes are 食物模型 replicas on flat cream — clean, consistent, shopfront-window. The gallery is real photography, as shot.</span></div>
+        <div class="rule"><span class="n">5</span><span><b>Jokes come from the menu,</b> never invented. If it isn’t printed in the shop, it doesn’t go on the site.</span></div>
+        <div class="rule"><span class="n">6</span><span><b>Tap targets 44px minimum.</b> The whole page is read one-handed on a phone in a queue.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"$preview": {"width": 1080, "height": 1560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
