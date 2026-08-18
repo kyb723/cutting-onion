@@ -32,8 +32,8 @@
   /* ---------- sizing ---------- */
 
   function densityFor(w, h) {
-    var n = Math.round((w * h) / 15000);
-    return Math.max(18, Math.min(84, n));
+    var n = Math.round((w * h) / 10500);
+    return Math.max(24, Math.min(84, n));
   }
 
   function resize() {
@@ -338,9 +338,10 @@
     moved = true;
   }, { passive: true });
 
-  hero.addEventListener('pointerleave', function () {
-    px = py = lx = ly = -9999;
-  }, { passive: true });
+  function forgetPointer() { px = py = lx = ly = -9999; }
+  hero.addEventListener('pointerleave', forgetPointer, { passive: true });
+  hero.addEventListener('pointercancel', forgetPointer, { passive: true });
+  hero.addEventListener('pointerup', forgetPointer, { passive: true });
 
   window.addEventListener('resize', function () {
     if (resize()) trimToTarget();
